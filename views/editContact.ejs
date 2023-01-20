@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+				<form action="/api/contact/update/<%= users._id%>" method="POST" id="">
+                    <a href="/contact"><i class="fa fa-arrow-left fa-2x"></i></a>
+					<div class="modal-header">						
+						<h4 class="modal-title">Edit Contact</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label> Name</label>
+							<input type="text" name="name" class="form-control" value="<%= users.name %>" >
+						</div>	
+                        <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error1 %>
+                            </div>
+                            <% } %>				
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Email</label>
+							<input type="email" name="email" class="form-control" value="<%= users.email %>">
+						</div>
+                        <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error2 %>
+                            </div>
+                            <% } %>					
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Contact Number</label>
+							<input type="number" name="contactnumber" class="form-control" value="<%= users.contactnumber %>">
+						</div>
+                        <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error3 %>
+                            </div>
+                            <% } %>					
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Message</label>
+							<input type="text" name="message" class="form-control" value="<%= users.message %>">
+						</div>
+                        <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error4 %>
+                            </div>
+                            <% } %>					
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Date</label>
+							<input type="date" name="date" class="form-control" value=""><%= users.date %>
+						</div>
+                        <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error5 %>
+                            </div>
+                            <% } %>					
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="Edit">
+					</div>
+				</form>
+		</div>
+	</div>
+</body>
+</html>

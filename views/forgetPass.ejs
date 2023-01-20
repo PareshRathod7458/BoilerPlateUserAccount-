@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      
+      <div>
+        <div>
+        <h3 style="text-align: center;">Forget Password</h3>
+        <hr>
+        <% if (typeof error !=='undefined' && error.length> 0) { %>
+              <div class="alert alert-warning" style="text-align: center; font-size: 17px!important; border-radius: 0%;">
+                <%= error %>
+               <a href="/forgetPass" style="color:#3d9970" ></a>
+              </div>
+              <% } %>
+        <form action="/verifyEmail" method="POST">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" placeholder="Email" />
+            <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+              <div style="color: red;">
+                <%= error1 %>
+              </div>
+            <% } %>	
+              <input type="submit" value="Send OTP" />
+              <a href="/">Cancel</a>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
+      

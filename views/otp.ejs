@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <title>OTP</title>
+  <style>
+    body {
+      background-color: #f1f1f1 !important;
+    }
+
+    .form-holder {
+      margin-top: 20%;
+      margin-bottom: 20%;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div>
+
+      <div>
+        <div>
+          <div>
+            <h3>OTP</h3>
+            <hr>
+            <% if (typeof error !=='undefined' && error.length> 0) { %>
+
+              <div class="alert alert-warning"
+                style="text-align: center; font-size: 17px!important; border-radius: 0%;">
+                <%= error %> &nbsp; &nbsp; &nbsp;<a href="/otp" style="color:#3d9970">&#10006;</a>
+              </div>
+              <% } %>
+                <form action="/verifyOtp" method="post">
+                  <input type="hidden" name="email" value="<%= email %>">
+                  
+                  <div>
+                    <label>OTP</label>
+                    <input type="text" name="otp" class="form-control" placeholder="OTP" />
+                  </div>
+
+                  <div>
+                    <input type="submit"  value="Verify OTP" />
+                    <a href="/forgetPass">Cancel</a>
+                  </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

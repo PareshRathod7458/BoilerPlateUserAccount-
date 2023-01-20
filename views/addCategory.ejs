@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Category</title>
+<style type="text/css">
+    body {
+  background: #f5f5f5;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 13px;
+ }  
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+				<form action="/api/category" method="POST">
+          <a href="/category"><i class="fa fa-arrow-left fa-2x"></i></a>
+					<div class="modal-header">						
+						<h4 class="modal-title">Add Category</h4>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+                <label>Project Category</label>
+                <input type="text" name="category" class="form-control" value="<%= values.category %>" >
+            </div>
+			<% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+            <div style="color: red;">
+              <%= error1 %>
+            </div>
+          <% } %>				
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="Add">
+					</div>
+				</form>
+		</div>
+	</div>
+</body>
+</html>

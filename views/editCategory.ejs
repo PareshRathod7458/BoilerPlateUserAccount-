@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <title>Category</title>
+  <style type="text/css">
+    body {
+      background: #f5f5f5;
+      font-family: 'Varela Round', sans-serif;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="table-wrapper">
+      <form action="/api/category/update/<%= users._id %>" method="POST">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Category</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">close</button> -->
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Project Category</label>
+            <input type="text" name="category" class="form-control" value="<%= users.category %>">
+          </div>
+          <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+            <div style="color: red;">
+              <%= error1 %>
+            </div>
+            <% } %>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-outline-dark" value="Edit">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

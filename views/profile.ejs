@@ -1,0 +1,96 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Profile</title>
+    </head>
+    <body>
+        <h3 class="text-center" style="color: rgb(27, 24, 24);">User Profile</h3>
+        <hr>
+        <div class="container">
+          <a href="/index"><i class="fa fa-arrow-left fa-2x"></i></a>
+            <div class="main-body"><br>
+              <form action="/updateProfile" method="get" enctype="multipart/form-data">
+                  <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex flex-column align-items-center text-center">
+                            <img src="<%= values.uploadImage%>" alt="" class="rounded-circle" width="150">
+                            <div class="mt-3">
+                              <h2>
+                                <%= values.name%>
+                            </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card mb-3">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Name</h6>
+                            </div>
+                            <div>
+                                <%= values.name%>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <div>
+                              <h6>Email</h6>
+                            </div>
+                            <div>
+                              <%= values.email%>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <div>
+                              <h6>Gender</h6>
+                            </div>
+                            <div>
+                              <%= values.gen%>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <div>
+                              <h6 class="mb-0">Phone Number</h6>
+                            </div>
+                            <div>
+                              <%= values.phoneno%>
+                            </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <div >
+                              <h6>City</h6>
+                            </div>
+                            <div >
+                              <%= values.city%>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div>
+                              <a href="/updateProfile" class="btn btn-outline-dark">Edit</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  </div>
+        
+                </div>
+            </div>
+
+    </body>
+    </html>

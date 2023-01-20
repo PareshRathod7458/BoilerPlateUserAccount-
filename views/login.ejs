@@ -1,0 +1,86 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <div class="container" 'justify-content-center'>
+    <h1>Login form using HTML and CSS</h1>
+
+    <% if (typeof error !=='undefined' && error.length> 0) { %>
+
+        <div class="alert alert-warning"
+          style="text-align: center; font-size: 17px!important; border-radius: 0%;">
+          <%= error %> &nbsp; &nbsp; &nbsp;<a href="/" style="color:#3d9970">&#10006;</a>
+        </div>
+
+        <% } %>
+
+    <form action="login" method="POST"> 
+        <div class="headingsContainer">
+            <h3>Sign in</h3>
+            <p>Sign in with your username and password</p>
+        </div>
+
+        <!-- Main container for all inputs -->
+        <div class="mainContainer">
+            <!-- Username -->
+            <label for="username">Email</label>
+            <input type="text" placeholder="email" name="email">
+            <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                <div style="color: red;">
+                  <%= error1 %>
+                </div>
+                <% } %>
+            <br><br>
+
+            <!-- Password -->
+            <label for="pswrd">password</label>
+            <input type="password" placeholder="Enter Password" name="password">
+            <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                <div style="color: red;">
+                  <%= error2 %>
+                </div>
+                <% } %>
+            <br><br>
+            <div class="" >
+                <a href="/forgetPass" >Forgot Password</a>
+              </div>
+<br>
+            <!-- Submit button -->
+            <button type="submit" value="login">Login</button>
+
+            <!-- Sign up link -->
+            <p class="register">Register here <a href="/register">Register here!</a></p>
+
+        </div>
+
+    </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

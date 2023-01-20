@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .container{
+    display: flex;
+    flex-direction: column;
+    width: 25vw; 
+}
+    </style>
+</head>
+<body>
+    <form action="/api/register" method="POST" enctype="multipart/form-data">
+     
+        <div class="container">
+          <h1>Register</h1>
+          <p>Kindly fill in this form to register.</p>
+          <label><b>Username</b></label>
+          <input
+            type="text"
+            placeholder="Enter username"
+            name="name"
+            value="<%= values.name %>"
+          />
+          <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+            <div style="color: red;">
+              <%= error1 %>
+            </div>
+            <% } %> <br>
+          <label for="email"><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            value="<%= values.email %>"
+          />
+          <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+            <div style="color: red;">
+              <%= error2 %>
+            </div>
+            <% } %> <br>
+
+          <label for="gen"><b>Gender</b></label>
+          <input type="radio" name="gen" value="male" <%= values.gen == "Male" ? 'checked':'' %>> Male  
+          <input type="radio" name="gen" value="female"  <%= values.gen == "Female" ? 'checked':'' %>> Female
+          <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+            <div style="color: red;">
+              <%= error3 %>
+            </div>
+            <% } %>
+     
+
+          <label><b>Phone No</b></label>
+          <input type="text" name="phoneno" class="form-control" placeholder="Phone No" value="<%= values.phoneno %>" />
+          <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+            <div style="color: red;">
+              <%= error4 %>
+            </div>
+            <% } %>
+         
+
+          <label for="pwd"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            id="pwd"
+            value="<%= values.password %>"
+          />
+          <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
+            <div style="color: red;">
+              <%= error5 %>
+            </div>
+            <% } %>
+        
+          <label for="pwd-repeat"><b>Confirm Password</b></label>
+          <input
+            type="password"
+            placeholder="Repeat Password"
+            name="pwdRe"
+            id="pwd-repeat"
+            value="<%= values.pwdRe %>"
+          />
+          <% if (typeof error6 !=='undefined' && error6.length> 0) { %>
+            <div style="color: red;">
+              <%= error6 %>
+            </div>
+            <% } %>
+         
+          <label for="image" class="form-label"  value="<%= values.uploadImage%>"><b>Upload Image</b></label>
+          <input class="form-control" type="file" id="formFileMultiple"
+            name="uploadImage" />
+          
+          <label><b>City</b></label>
+          <select name="city" id="city">
+            <option value="">--select city--</option>
+          
+            <option value="navsari"  <%= values.city == "navsari" ? 'selected':'' %>>Navsari</option>
+            <option value="surat" <%= values.city == "surat" ? 'selected':'' %> >Surat</option>
+            <option value="ahmedabad" value="ahmedabad" <%= values.city == "ahmedabad" ? 'selected':'' %>>Ahmedabad</option>
+          
+
+          
+<input type="submit" value="Register">
+  
+          <!-- <button type="submit">Register</button> -->
+        </div>
+  
+        <div>
+          <p>Already have an account? <a href="/login">Sign In</a>.</p>
+        </div>
+      </form>
+  
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testimonial</title>
+<style type="text/css">
+    body {
+  background: #f5f5f5;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 13px;
+ }
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+				<form action="/api/testimonial" method="POST" id="" enctype="multipart/form-data">
+                    <a href="/testimonial"><i class="fa fa-arrow-left fa-2x"></i></a>
+                    <div class="modal-header">						
+						<h4 class="modal-title">Add Testimonial</h4>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Testimonial Name</label>
+							<input type="text" name="name" class="form-control" value="<%= values.name %>" >
+						</div>	
+                        <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error1 %>
+                            </div>
+                            <% } %>				
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Designation</label>
+							<input type="text" name="designation" class="form-control" value="<%= values.designation %>">
+						</div>
+                        <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error2 %>
+                            </div>
+                            <% } %>					
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Description</label>
+							<input type="text" name="description" class="form-control" value="<%= values.description %>">
+						</div>
+                        <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                            <div style="color: red;">
+                              <%= error3 %>
+                            </div>
+                            <% } %>					
+					</div>
+                    <div class="modal-body">					
+						<label for="image" name="image" class="form-label">Upload Image</label>
+                        <input class="form-control" type="file" id="formFileMultiple" name="uploadImage" />					
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="Add">
+					</div>
+				</form>
+		</div>
+	</div>
+</body>
+</html>

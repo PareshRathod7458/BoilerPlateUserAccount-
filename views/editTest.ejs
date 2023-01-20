@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testimonial</title>
+</head>
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+				<form action="/api/testimonial/update/<%= users._id %>" method="POST" enctype="multipart/form-data">
+                    <a href="/testimonial"><i class="fa fa-arrow-left fa-2x"></i></a>
+					<div class="modal-header">						
+						<h4 class="modal-title">Edit Testimonial</h4>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Testimonial Name</label>
+							<input type="text" name="name" class="form-control" value="<%= users.name %>">
+						</div>					
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Designation</label>
+							<input type="text" name="designation" class="form-control" value="<%= users.designation %>">
+						</div>					
+					</div>
+                    <div class="modal-body">					
+						<div class="form-group">
+							<label>Description</label>
+							<input type="text" name="description" class="form-control" value="<%= users.description %>">
+						</div>					
+					</div>
+                    <div class="modal-body">					
+						<label for="image" name="image" class="form-label">Upload Image</label>
+                        <input class="form-control" type="file" name="uploadImage" />
+                        <img src="/<%=users.uploadImage %>" width="100" class="img-thumbnail mt-1">					
+					</div>
+                    <input type="hidden" name="old_image" value="<%= users.uploadImage %>">
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="Update">
+					</div>
+				</form>
+		</div>
+	</div>
+</body>
+</html>
